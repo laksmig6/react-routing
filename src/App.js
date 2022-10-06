@@ -8,6 +8,7 @@ import User from "./pages/User";
 import Newuser from "./pages/Newuser";
 import NotFound from "./pages/NotFound";
 import UsersContainer from "./pages/UsersContainer";
+import "./styles.css";
 
 const Root = () => {
   return (
