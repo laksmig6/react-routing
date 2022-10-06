@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, Outlet, useSearchParams } from "react-router-dom";
 
 const UsersContainer = () => {

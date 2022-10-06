@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./pages/Header";
 import Home from "./pages/Home";
@@ -11,6 +11,7 @@ import UsersContainer from "./pages/UsersContainer";
 import "./styles.css";
 
 const Root = () => {
+  const loc = useLocation();
   return (
     <>
       <div className="container">
@@ -20,6 +21,7 @@ const Root = () => {
           </div>
         </div>
       </div>
+      {loc.state}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<UsersContainer />}>
