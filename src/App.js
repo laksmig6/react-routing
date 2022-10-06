@@ -4,6 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./pages/Header";
 import Home from "./pages/Home";
 import Userlist from "./pages/Userlist";
+import User from "./pages/User";
+import Newuser from "./pages/Newuser";
+import NotFound from "./pages/NotFound";
+import UsersContainer from "./pages/UsersContainer";
 
 const Root = () => {
   return (
@@ -16,8 +20,13 @@ const Root = () => {
         </div>
       </div>
       <Routes>
-        <Route path={"/"} element={<Home />} />
-        <Route path={"/user"} element={<Userlist />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/users" element={<UsersContainer />}>
+          <Route index element={<Userlist />} />
+          <Route path=":id" element={<User />} />
+          <Route path="new" element={<Newuser />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
